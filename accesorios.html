@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/popper.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="shortcut icon" href="./img/FAVICON-02.png" type="image/.png">
+    <title>Carrito Compras en JavaScript y LocalStorage</title>
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">Inicio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./bicicletas.html">Bicicletas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./accesorios.html">Accesorios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contacto.html">Contacto</a>
+                    </li>
+                </ul>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <img src="img/cart.jpeg" class="nav-link dropdown-toggle img-fluid" height="70px"
+                                width="70px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false"></img>
+                            <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                                <table id="lista-carrito" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+
+                                <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
+                                <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
+                                    Compra</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <main>
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 my-4 mx-auto text-center">
+            <h1 class="display-4 mt-4">Lista de Productos</h1>
+            <p class="lead">Selecciona uno de nuestros productos y accede a un descuento. Para ver las características del producto pasa el mouse por la imagen.</p>
+        </div>
+
+        <div class="container" id="lista-productos" >
+
+            <div class="card-deck mb-3 text-center " ">
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header" >
+                        <h4 class="my-0 font-weight-bold">GIRO</h4>
+                    </div>
+                    <div class="card-body ">
+                        <div class="contenedor_tarjeta">
+                            <figure>
+                                <img src="img/casco (1).jpg"
+                                    class="card-img-top frontal">
+                                <figcaption class="trasera">
+
+
+                                    <h1 class="card-title pricing-card-title precio">$ <span class="">15600</span>
+                                    </h1>
+                                    <hr>
+                                    <h5 >Casco Giro Agilis Ciclismo Aerodinamico (T= M)</h5>
+                                    <hr>
+                                    <p>Carcasa de policarbonato con interior EPS, Tecnología MIPS,  Almohadillas Extraíbles Lavables (T= M)</p>
+
+
+
+
+                                </figcaption>
+                            </figure>
+                        </div>
+
+
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+                    </div>
+
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">BELL</h4>
+                    </div>
+                    <div class="card-body ">
+                        <div class="contenedor_tarjeta">
+                            <figure>
+                                <img src="img/casco (2).jpg"
+                                    class="card-img-top frontal">
+                                <figcaption class="trasera">
+                                   <h1 class="card-title pricing-card-title precio">$ <span class="">14000</span>
+                                    </h1>
+                                    <hr>
+                                    <h5>Casco Bell Crest-R Talle U 54-61cm</h5>
+                                    <hr>
+                                    <p>Armazón fusión In-Mold, peso: 270 gr, almohadillas extraíbles Lavables, ventilación frontal, carcasa de policarbonato.</p>
+                               </figcaption>
+                            </figure>
+                        </div>
+
+
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="2">Comprar</a>
+                    </div>
+
+                </div>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">LAZER</h4>
+                    </div>
+                    <div class="card-body ">
+                        <div class="contenedor_tarjeta">
+                            <figure>
+                                <img src="img/casco (3).jpg"
+                                    class="card-img-top frontal">
+                                <figcaption class="trasera">
+                                    <h1 class="card-title pricing-card-title precio">$ <span class="">98000</span>
+                                    </h1>
+                                    <hr>
+                                    <h5>Casco Lazer Chiru Talle L 58-61cm Violeta</h5>
+                                    <hr>
+                                    <p>Construcción In-mold, ajuste Turnfit® Plus System, con Visera Integrada, peso: 340 gr (talle M), certificaciones: CE-CPS</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="3">Comprar</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card-deck mb-3 text-center ">
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">CADENA</h4>
+                    </div>
+                    <div class="card-body ">
+                        <div class="contenedor_tarjeta">
+                            <figure>
+                                <img src="img/cadenas (1).jpg"
+                                    class="card-img-top frontal">
+                                <figcaption class="trasera">
+
+
+                                    <h1 class="card-title pricing-card-title precio">$ <span class="">8000</span>
+                                    </h1>
+                                    <hr>
+                                    <h5>Candado Linga Bicicleta OnGuard Rottweiler</h5>
+                                    <hr>
+                                    <p>Medidas: 100cm x 20mm(diam), compuesta de un cable de acero trenzado protegido por blindaje de acero, peso real: 995 grs..</p>
+
+                                </figcaption>
+                            </figure>
+                        </div>
+
+
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="4">Comprar</a>
+                    </div>
+
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">CADENA</h4>
+                    </div>
+                    <div class="card-body ">
+                        <div class="contenedor_tarjeta">
+                            <figure>
+                                <img src="img/cadenas (2).jpg"
+                                    class="card-img-top frontal">
+                                <figcaption class="trasera">
+                                   <h1 class="card-title pricing-card-title precio">$ <span class="">81000</span>
+                                    </h1>
+                                    <hr>
+                                    <h5>Cadena Integrada Kryptonite Keeper 785</h5>
+                                    <hr>
+                                    <p>Cadena de bloqueo con perno templado, manga externa de nylon de alta resistencia, long. 85cm, peso 1590gr.</p>
+                               </figcaption>
+                            </figure>
+                        </div>
+
+
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="5">Comprar</a>
+                    </div>
+
+                </div>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">CADENA</h4>
+                    </div>
+                    <div class="card-body ">
+                        <div class="contenedor_tarjeta">
+                            <figure>
+                                <img src="img/cadenas (3).png"
+                                    class="card-img-top frontal">
+                                <figcaption class="trasera">
+                                    <h1 class="card-title pricing-card-title precio">$ <span class="">11500</span>
+                                    </h1>
+                                    <hr>
+                                    <h5>Candado U-Lock Kryptonite Evolution Mini-</h5>
+                                    <hr>
+                                    <p>Dimensiones del candado en U: 8,4 cm x 14 cm x 13 mm, sistema EZ, abrazadera Transit FlexFrame-U, peso: 1430gr.</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="6">Comprar</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card-deck mb-3 text-center ">
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">ASIENTO SPORT</h4>
+                    </div>
+                    <div class="card-body ">
+                        <div class="contenedor_tarjeta">
+                            <figure>
+                                <img src="img/asientos (1).jpg"
+                                    class="card-img-top frontal">
+                                <figcaption class="trasera">
+
+
+                                    <h1 class="card-title pricing-card-title precio">$ <span class="">3000</span>
+                                    </h1>
+                                    <hr>
+                                    <h5>Asiento Niño Ddk Sport Attitude 199x148mm</h5>
+                                    <hr>
+                                    <p>Asiento DDK SPORT, material Sintético, uso: Paseo/ Mountain Bike/ Urbano, peso: 250gr.</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="7">Comprar</a>
+                    </div>
+
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">ASIENTO MGM</h4>
+                    </div>
+                    <div class="card-body ">
+                        <div class="contenedor_tarjeta">
+                            <figure>
+                                <img src="img/asientos (2).jpg"
+                                    class="card-img-top frontal">
+                                <figcaption class="trasera">
+                                   <h1 class="card-title pricing-card-title precio">$ <span class="">4500</span>
+                                    </h1>
+                                    <hr>
+                                    <h5>Asiento Bicicleta Antiprostatico MGM AST-065 Sport</h5>
+                                    <hr>
+                                    <p>Medidas: 255 x 140mm, rieles de CroMo, diseño Sport, peso: 375 grs.</p>
+                               </figcaption>
+                            </figure>
+                        </div>
+
+
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="8">Comprar</a>
+                    </div>
+
+                </div>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">ASIENTO ITALIANO </h4>
+                    </div>
+                    <div class="card-body ">
+                        <div class="contenedor_tarjeta">
+                            <figure>
+                                <img src="img/asientos (3).png"
+                                    class="card-img-top frontal">
+                                <figcaption class="trasera">
+                                    <h1 class="card-title pricing-card-title precio">$ <span class="">5000</span>
+                                    </h1>
+                                    <hr>
+                                    <h5>Asiento Antiprostatico Selle Italia X0</h5>
+                                    <hr>
+                                    <p>Pensado en la anatomía de la mujer, modelo X0 Lady GF, canal antiprostático, medidas 260 X 160 mm, peso: 340gr.</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="9">Comprar</a>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+
+     <!-- Footer-->
+     <footer class="bg-dark py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; BIKE FOREVER</div></div>
+                <div class="col-auto">
+                    <a class="link-light small" href="#!">Privacidad</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="#!">Terminos</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="#!">Contacto</a>
+                </div>
+            </div>
+        </div>
+      </footer>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/pedido.js"></script>
+
+</body>
+
+</html>
