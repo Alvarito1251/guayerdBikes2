@@ -1,37 +1,38 @@
-let submit = document.getElementById("ingresar").addEventListener("click", registerForm());
-function registerForm(){
-    let nombre = document.getElementById("name").value;
-    let contraseña = document.getElementById("password").value;
-    let contraseña2 = document.getElementById("password2").value;
-    let error = document.getElementById("error");
-    // if (nombre == "" || contraseña == "" || contraseña2 == ""){
-    //     error.innerHTML = "Complete todos los campos";
-    //     return false;
-    // }else if(contraseña != contraseña2){
-    //     error.innerHTML = "Las contraseñas deben coincidir";
-    //     return false;
+function buttonRegister() {
+    const nameUser = document.getElementById("name").value;
+    const passwordOne = document.getElementById("passwordOne").value;
+    const passwordTwo = document.getElementById("passwordTwo").value;
+    const err = document.getElementById("err");
+    // const register = document.getElementById("register");
 
-    // }else{
-    //     // window.location.replace("./login.html");
-    //     // localStorage.setItem("nombre", nombre);
+    if(nameUser !== "" && passwordOne !== "" && passwordTwo !== "") {
+        localStorage.setItem("nameUser", nameUser);
+        localStorage.setItem("passwordOne", passwordOne);
+        localStorage.setItem("passwordTwo", passwordTwo);
+        setTimeout(() => {
+            window.location.replace("./login.html");
+        },2000);
+    } else {
+        err.textContent = "Todos los campos son obligatorios"
+        return false;
+    }
+};
 
-    // }
-    localStorage.setItem("nombre", nombre);
-    let valor = localStorage.getItem("nombre");
-    console.log(valor);
-}
+// Validando el LOGIN.
+function validateForm() {
+    let user = document.forms["myForm"]["user"].value;
+    let password = document.forms["myForm"]["password"].value;
 
+    let getName = localStorage.getItem("nameUser");
+    let getPassword = localStorage.getItem("passwordOne");
 
-function validateform (){
-    let usuario = document.forms["myForm"]["user"].value;
-    let contraseña  = document.forms["myForm"]["password"].value;
-    if (usuario == "" || contraseña == ""){
-        let error = document.getElementById("error");
-        error.innerHTML = "Este campo es obligatorio llenarlo";
+    if(user === getName && password === getPassword) {
+        window.location.replace("./index.html");
+    } else if(user == "" && password == "") {
+        document.getElementById("err").textContent = "Usuario o contraseña incorrectos";
         return false;
     }
 }
-
 
 
 
