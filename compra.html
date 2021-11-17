@@ -1,44 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilos.css">
-    <script src="js/popper.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"> -->
+    <link rel="shortcut icon" href="./img/FAVICON-02.png" type="image/.png">
     <link rel="stylesheet" href="css/sweetalert2.min.css">
-    <link rel="shortcut icon" href="../indext-auxiliar/imagenes/FAVICON-02.png" type="image/.png">
-
-    <title>Carrito Compras en JavaScript</title>
-    
+    <title>Compras</title>
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="./index.html">Inicio</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./bicicletas.html">Bicicletas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./accesorios.html">Accesorios</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./contacto.html">Contacto</a>
-              </li>
-            </ul>
-          </div>
+            <a class="navbar-brand" href="./index.html">Inicio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./bicicletas.html">Bicicletas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./accesorios.html">Accesorios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </nav>
+    </nav>
 
     <br>
 
@@ -58,7 +52,8 @@
                         <div class="form-group row">
                             <label for="email" class="col-12 col-md-2 col-form-label h2">Correo :</label>
                             <div class="col-12 col-md-10">
-                                <input type="email" class="form-control" id="correo" placeholder="Ingresa tu correo" required>
+                                <input type="email" class="form-control" id="correo" placeholder="Ingresa tu correo"
+                                    required>
                             </div>
                         </div>
 
@@ -73,7 +68,6 @@
                                         <th scope="col">Sub Total</th>
                                         <th scope="col">Eliminar</th>
                                     </tr>
-
                                 </thead>
                                 <tbody>
 
@@ -102,40 +96,33 @@
 
                             </table>
                         </div>
-
                         <div class="row justify-content-center" id="loaders">
                             <img id="cargando" src="" width="220">
                         </div>
-
                         <div class="row justify-content-between">
                             <div class="col-md-4 mb-2">
                                 <a href="./bicicletas.html" class="btn btn-info btn-block">Seguir comprando</a>
                             </div>
-                            <div class="col-xs-12 col-md-4">
-                                <a href="" class="btn btn-success btn-block" id="procesar-compra">Realizar compra</a>
+                            <div class="col-xs-12 col-md-4" id="pay">
+                                <a href="" class="btn btn-primary btn-block" id="buttonPay" onclick="cartPrice();">Realizar compra</a>
                             </div>
                         </div>
                     </form>
-
-
                 </div>
-
-
             </div>
-
         </div>
     </main>
 
 
 
-
-
     </div>
-     <!-- Footer-->
-     <footer class="bg-dark py-4 mt-auto">
+    <!-- Footer-->
+    <footer class="bg-dark py-4 mt-auto">
         <div class="container px-5">
             <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; BIKE FOREVER</div></div>
+                <div class="col-auto">
+                    <div class="small m-0 text-white">Copyright &copy; BIKE FOREVER</div>
+                </div>
                 <div class="col-auto">
                     <a class="link-light small" href="#!">Privacidad</a>
                     <span class="text-white mx-1">&middot;</span>
@@ -145,14 +132,7 @@
                 </div>
             </div>
         </div>
-      </footer>
-
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/sweetalert2.min.js"></script>
-    <script src="js/carrito.js"></script>
-    <script src="js/compra.js"></script>
-
+    </footer>
+    <script src="./js/app.js"></script>
 </body>
-
 </html>

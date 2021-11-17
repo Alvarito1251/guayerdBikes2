@@ -7,12 +7,13 @@
 .h2BannerInicio {
     align-content: center;
     margin-top: 7%;
+    font-size: 10px;
 }
 #logo1{
     margin: all;
     width:20%;
     height: 130px;
-    background: url(./500_F_321218561_XwUJQAtZNhkVjLYFeJhJ03Ie7ISSTXLr.jpg)no-repeat right;
+    background: url(../img/camion.jpg)no-repeat right;
     float: left;
     margin-right: 50px;
 }
@@ -20,7 +21,7 @@
     margin: all;
     width:20%;
     height: 130px;
-    background: url(./500_F_125620662_UpW24BZSFDVHL0giXMEJROSFrwVmLxBf.jpg)no-repeat right;
+    background: url(../img/simbolopeso.jpg)no-repeat right;
     float: left;
     margin-right: 50px;
 }
@@ -28,22 +29,28 @@
     margin: all;
     width:20%;
     height: 130px;
-    background: url(./500_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg)no-repeat right;
+    background: url(../img/persona.jpg)no-repeat right;
     float: left;
     margin-right: 50px;
 }
 .h2Promocion{
     margin-left: 5%;
     margin-top: 5%;
-    font-size: 60px;
+    font-size: 40px;
 }
 
+#cargando {
+    display: none;
+}
+
+/* Estilos de las tarjetas de las bicis */
 *{
     margin:0;
     padding: 0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    list-style: none;
 }
 body{
     background-color: #f0f2f1;
@@ -74,8 +81,6 @@ a{
 
 }
 
-
-
 figure {
     height: 250px;
     margin:0;
@@ -93,23 +98,17 @@ figure .trasera {
     transition: all ease .5s;
 }
 
-
-
 figure .trasera {
     position: absolute;
-    top:0;
-    
+    top:0; 
     color: #fff;
     transform: perspective(600px) rotateY(180deg);
     backface-visibility: hidden;
     overflow: auto;
     background: #000;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-
 }
 
 figure .trasera .NombreBici {
@@ -141,6 +140,6 @@ figure .trasera hr {
     gap: 20px;
 }
 
-#cargando {
-    display: none;
+footer {
+    flex: 0 0 auto;
 }
