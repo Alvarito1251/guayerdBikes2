@@ -106,7 +106,8 @@ function cartPrice() {
     for(let i = 0; i < cart.length; i++) {
         total += cart[i]
     }
-    document.getElementById("subtotal").textContent = total;
+    document.getElementById("total").textContent = total;
+    document.getElementById("successfull").innerHTML = "La compra fue realizada con exito";
 }
 
 
