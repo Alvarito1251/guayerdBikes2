@@ -47,9 +47,9 @@
                     <div class="col-lg-8 col-xl-4">
                         <form>
                             <div class="row mb-3">
-                                <label for="userName" class="col-sm-2 col-form-label">Nombre</label>
+                                <label for="name" class="col-sm-2 col-sm-12 col-form-label">Nombre Completo</label>
                                 <div class="col-sm-12">
-                                    <input type="text" class="form-control" id="name">
+                                    <input type="text" class="form-control" name="name" id="name">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -59,12 +59,12 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="passwordTwo" class="col-sm-2 col-form-label">Repetir Contraseña</label>
+                                <label for="passwordTwo" class="col-sm-2 col-sm-12  col-form-label">Repetir Contraseña</label>
                                 <div class="col-sm-12">
                                     <input type="password" class="form-control" id="passwordTwo">
                                 </div>
                             </div>
-                            <p id="err"></p>
+                            <div class="alert alert-danger visually-hidden" role="alert" id="err"></div>
                             <button type="button" class="btn btn-primary" onclick="buttonRegister();" id= "register">Registrar</button>
                         </form>
                     </div>
